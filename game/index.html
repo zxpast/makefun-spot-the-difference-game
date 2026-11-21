@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Harbor — Spot the Difference</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <div id="logo">LANTERN HARBOR<small>SPOT THE DIFFERENCE</small></div>
+    <div class="pill" id="levelName">Level 1 · Harbor Dawn</div>
+    <div class="pill" id="foundCounter">Found <b>0 / 7</b></div>
+    <div class="pill" id="timer">03:00</div>
+    <div class="pill" id="scoreBox">Score <b>0</b></div>
+    <div class="spacer"></div>
+    <button class="hud" id="hintBtn" type="button">💡 Hint (3)</button>
+    <button class="hud" id="muteBtn" type="button">🔊 Sound</button>
+    <button class="hud" id="restartBtn" type="button">↺ Restart</button>
+  </header>
+
+  <div id="stageWrap">
+    <canvas id="stage" width="1280" height="560"></canvas>
+
+    <div class="overlay" id="titleOverlay">
+      <h1>🏮 LANTERN HARBOR</h1>
+      <p>Two pictures hang side by side in the old harbor gallery — nearly
+      identical, but not quite. Find every hidden difference before the
+      lanterns burn down. Click a difference on <b>either</b> picture to
+      circle it. Three scenes grow harder as you go: a sunny harbor, a busy
+      night market, and a moonlit garden.</p>
+      <p class="dim">Wrong clicks cost 5 seconds. Hints cost 10 seconds.
+      Find them all to light the next scene.</p>
+      <div class="levelpick" id="levelPick"></div>
+      <button class="bigbtn" id="playBtn" type="button">▶ &nbsp;Start the Hunt</button>
+      <p class="dim">Mouse to click · <b>H</b> hint · <b>R</b> restart · <b>M</b> sound · <b>1–3</b> pick a scene</p>
+    </div>
+
+    <div class="overlay" id="levelOverlay" hidden>
+      <h2 id="levelTitle">Scene Complete!</h2>
+      <div id="levelStars">★★★</div>
+      <p id="levelStats"></p>
+      <button class="bigbtn" id="nextBtn" type="button">Next Scene ▶</button>
+      <p class="dim">or press <b>N</b></p>
+    </div>
+
+    <div class="overlay" id="overOverlay" hidden>
+      <h2 style="color:#ff7b6b">⏳ Time's Up!</h2>
+      <p id="overStats"></p>
+      <button class="bigbtn" id="retryBtn" type="button">↺ &nbsp;Try This Scene Again</button>
+      <p class="dim">or press <b>R</b></p>
+    </div>
+
+    <div class="overlay" id="winOverlay" hidden>
+      <h1>🎉 HARBOR MASTER!</h1>
+      <p id="winStats"></p>
+      <p class="dim">Every lantern lit, every difference found. The gallery
+      is yours — play again to beat your score.</p>
+      <button class="bigbtn" id="againBtn" type="button">↺ &nbsp;Play Again</button>
+    </div>
+  </div>
+
+  <footer>
+    <span>Click a difference on either picture.</span>
+    <span><kbd>H</kbd> hint (−10s)</span>
+    <span><kbd>R</kbd> restart scene</span>
+    <span><kbd>M</kbd> sound on/off</span>
+    <span><kbd>1</kbd>–<kbd>3</kbd> jump to a scene</span>
+    <span style="margin-left:auto">An original game · art, sounds and scenes drawn in code · no network needed</span>
+  </footer>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
