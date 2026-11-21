@@ -1,0 +1,167 @@
+/* Lantern Harbor — spot the difference. Layout and HUD styling. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #10182e;
+  color: #f4ead2;
+  font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+  min-height: 100%;
+}
+
+#app {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 10px 0 14px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 10px 10px;
+}
+
+#logo {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #ffd97a;
+  text-shadow: 0 2px 0 #7a4a12, 0 4px 14px rgba(0, 0, 0, 0.55);
+  white-space: nowrap;
+}
+
+#logo small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #9fd8c9;
+  text-shadow: none;
+}
+
+.pill {
+  background: #1d2c4d;
+  border: 2px solid #3c5a86;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pill b { color: #ffd97a; }
+
+#foundCounter { border-color: #4caf7d; }
+#foundCounter b { color: #8fe6b0; }
+
+#timer {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  border-color: #c98a2e;
+}
+#timer.low { color: #ff7b6b; border-color: #ff7b6b; }
+
+.spacer { flex: 1; }
+
+button.hud {
+  background: #274b73;
+  color: #f4ead2;
+  border: 2px solid #4d7ea8;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+button.hud:hover { background: #35638f; }
+button.hud:disabled { opacity: 0.4; cursor: default; }
+
+#stageWrap {
+  position: relative;
+  width: 1280px;
+  height: 560px;
+  border: 3px solid #3c5a86;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0a1122;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#stage { display: block; width: 1280px; height: 560px; cursor: crosshair; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(8, 14, 30, 0.82);
+  text-align: center;
+  padding: 20px;
+  z-index: 5;
+}
+.overlay[hidden] { display: none; }
+
+.overlay h1 {
+  font-size: 44px;
+  color: #ffd97a;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 0 #7a4a12;
+}
+.overlay h2 { font-size: 34px; color: #8fe6b0; }
+.overlay p { font-size: 18px; line-height: 1.55; max-width: 760px; }
+.overlay p.dim { color: #aab8d4; font-size: 15px; }
+
+.bigbtn {
+  background: #e8a33d;
+  color: #241503;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 34px;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #8a5a10;
+}
+.bigbtn:hover { background: #ffc65c; }
+.bigbtn:active { transform: translateY(3px); box-shadow: 0 1px 0 #8a5a10; }
+
+.levelpick { display: flex; gap: 10px; }
+.levelpick button {
+  background: #1d2c4d;
+  color: #f4ead2;
+  border: 2px solid #4d7ea8;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+.levelpick button:hover { background: #35638f; }
+
+#levelStars { font-size: 26px; letter-spacing: 6px; color: #ffd97a; }
+
+footer {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 12px 0;
+  font-size: 13px;
+  color: #aab8d4;
+  white-space: nowrap;
+  overflow: hidden;
+}
+footer span { white-space: nowrap; }
+footer kbd {
+  background: #1d2c4d;
+  border: 1px solid #4d7ea8;
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  padding: 1px 7px;
+  color: #f4ead2;
+  font-family: inherit;
+}
